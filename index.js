@@ -56,10 +56,21 @@ function settfun(){
 
     document.getElementById("divibox2").style.display = "block";
 
+
+
+    getbolde();
+
+    
     
     
     }
 
+
+
+}
+
+
+function getbolde(){
     setInterval(() => {
     
         let date= new Date(),
@@ -73,25 +84,24 @@ function settfun(){
         hour = hour == 0 ? hour = 12 : hour;
     
         var imag = document.getElementsByClassName("divimg")[0];
-        var wakeu = document.getElementById("waket");
-        var luchhh = document.getElementById("luncht");
-        var nappp = document.getElementById("napt");
+        var wakeu = document.getElementById("waket").innerText;
+        var luchhh = document.getElementById("luncht").innerText;
+        var nappp = document.getElementById("napt").innerText;
         
-        let waketime = document.getElementById("wake").value;
-        let lunchtime = document.getElementById("lunch").value;
-        let naptime = document.getElementById("nap").value;
     
-        var anty = waketime.slice(0,5);
-        var vant = lunchtime.slice(0,5);
-        var manty = naptime.slice(0,5);
-    
-        var lastanty = waketime.slice(-5,);
-        var lastvant = lunchtime.slice(-5,);
-        var lastmanty = naptime.slice(-5,);
+
+
+        var myna1 = wakeu.slice(18,23)
+        var myna2 = luchhh.slice(19,24)
+        var myna3 = nappp.slice(17,22)
+
+
+        var lastmyna1 = wakeu.slice(-5,)
+        var lastmyna2 = luchhh.slice(-5,)
+        var lastmyna3 = nappp.slice(-5,)
+
     
         let secdam = " "+hour+d;
-    
-        // var aaaa= document.getElementById("wake").value.length;
         
     
         if(secdam.length==4){
@@ -100,20 +110,23 @@ function settfun(){
         else{
             secdam = " "+hour+d;
         }
+
+
+        
     
 
-        if(secdam==anty || secdam==lastanty ){
+        if(secdam==myna1 || secdam==lastmyna1 ){
             imag.style.backgroundImage = "url(./img/wakeup_image.png)"; 
             document.getElementById("imgtxt").innerText = "wake up !!";
     
         }
-        else if(secdam==vant || secdam==lastvant ){
+        else if(secdam==myna2 || secdam==lastmyna2 ){
             imag.style.backgroundImage = "url(./img/lunch_image.png)"; 
             document.getElementById("imgtxt").innerText = "Let's have some lunch !!";
     
     
         }
-        else if(secdam==manty || secdam==lastmanty){
+        else if(secdam==myna3 || secdam==lastmyna3){
             imag.style.backgroundImage = "url(./img/goodnight_image.png)"; 
             document.getElementById("imgtxt").innerText = "good night !!";
     
@@ -130,13 +143,6 @@ function settfun(){
     
     
     }, 1000);
-    
-
-
-
-    
-
-
 }
 
 
@@ -153,12 +159,5 @@ function settfun(){
 
 
 
-
-
-
-
-// if(hhr.innerText==){
-
-// }
 
 
